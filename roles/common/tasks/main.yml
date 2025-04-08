@@ -22,6 +22,9 @@
   timezone:
     name: Asia/Dubai
 
+- name: Synchronize system clock with NTP servers
+  command: timedatectl set-ntp true
+
 - name: Create a user named mohannad
   user:
     name: mohannad
