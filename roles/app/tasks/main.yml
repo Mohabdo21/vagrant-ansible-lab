@@ -15,9 +15,11 @@
     dest: /usr/local/
     remote_src: true
 
-- name: Add Go PATH to .bashrc
+- name: Add Go to system-wide PATH
   lineinfile:
-    dest: /home/vagrant/.bashrc
+    path: /etc/profile.d/go_path.sh
+    create: true
+    mode: "0755"
     line: "export PATH=$PATH:/usr/local/go/bin"
 
 - name: Check Go Installation
