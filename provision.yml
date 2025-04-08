@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - secrets.yml
+  roles:
+    - common
+
+- hosts: web
+  become: true
+  roles:
+    - web
+
+- hosts: db
+  become: true
+  roles:
+    - db
+
+- hosts: app
+  become: true
+  roles:
+    - app
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Reboot if required
+      reboot:
+        msg: "Rebooting after provisioning"
+        pre_reboot_delay: 5
+        reboot_timeout: 600
+        test_command: whoami

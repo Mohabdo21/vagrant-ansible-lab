@@ -1,0 +1,7 @@
+# Vagrant files
+.vagrant/
+*.log
+.vault_pass.txt
+
+# Ansible vault secrets
+secrets.yml

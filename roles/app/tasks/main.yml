@@ -1,0 +1,30 @@
+---
+- name: Download Go
+  get_url:
+    url: https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+    dest: /home/vagrant
+
+- name: Remove Existing go Installations
+  file:
+    path: /usr/local/go
+    state: absent
+
+- name: Extract Go package
+  unarchive:
+    src: /home/vagrant/go1.24.0.linux-amd64.tar.gz
+    dest: /usr/local/
+    remote_src: true
+
+- name: Add Go PATH to .bashrc
+  lineinfile:
+    dest: /home/vagrant/.bashrc
+    line: "export PATH=$PATH:/usr/local/go/bin"
+
+- name: Check Go Installation
+  shell: /usr/local/go/bin/go version
+  register: go_version
+  changed_when: false
+
+- name: Display Go version
+  debug:
+    var: go_version.stdout
