@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
       vm.vm.hostname = "#{name}.local"
       vm.vm.network "private_network", ip: ip
       vm.vm.provider "virtualbox" do |vb|
-        vb.memory = "1024"
-        vb.cpus = 2
+        vb.memory = "512"
+        vb.cpus = 1
       end
       vm.vm.provision "ansible" do |ansible|
         ansible.playbook = "provision.yml"
