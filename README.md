@@ -2,6 +2,21 @@
 
 This project provides a virtualized lab environment using **Vagrant** and **Ansible** for provisioning a multi-node Ubuntu infrastructure. It’s perfect for practicing system automation, learning Ansible roles, and simulating production-like setups on your local machine.
 
+<!--toc:start-->
+- [Vagrant-Ansible Lab Environment](#vagrant-ansible-lab-environment)
+  - [📦 Project Structure](#-project-structure)
+  - [🧱 VMs Layout](#-vms-layout)
+  - [🚀 Getting Started](#-getting-started)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Prepare Secrets](#2-prepare-secrets)
+    - [3. Create a ssh key pair for the user `mohannad`](#3-create-a-ssh-key-pair-for-the-user-mohannad)
+    - [4. Launch the VMs](#4-launch-the-vms)
+    - [5. SSH into a VM](#5-ssh-into-a-vm)
+  - [🔧 Features](#-features)
+  - [📜 Tips](#-tips)
+  - [🛡️ Security](#️-security)
+<!--toc:end-->
+
 ## 📦 Project Structure
 
 ```
