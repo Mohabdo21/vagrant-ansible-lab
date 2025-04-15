@@ -62,7 +62,7 @@ setup_ssh_keys() {
 }
 
 install_guest_additions() {
-	local version="7.1.6"
+	local version="7.1.8"
 	local iso="VBoxGuestAdditions_${version}.iso"
 	local mount_dir="/media/VBoxGuestAdditions"
 
